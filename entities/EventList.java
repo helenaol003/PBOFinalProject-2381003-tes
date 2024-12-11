@@ -22,7 +22,7 @@ public class EventList {
         return dateEvent;
     }
 
-    public void setName(String nameEvent) {
+    public void setNameEvent(String nameEvent) {
         this.nameEvent = nameEvent;
     }
 
@@ -42,11 +42,12 @@ public class EventList {
         return pesertaList;
     }
 
-    public void tambahPeserta(PesertaList peserta) {
+    public void addPeserta(PesertaList peserta) {
         pesertaList.add(peserta);
     }
 
-    public void hapusPeserta(PesertaList peserta) {
+    public void removePeserta(PesertaList peserta) {
         pesertaList.remove(peserta);
     }
+
 }

@@ -19,11 +19,26 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public void removeEvent(int index) {
-        ArrayList<EventList> events = eventRepository.getAllEvents();
-        if (index >= 0 && index < events.size()) {
-            eventRepository.removeEvent(events.get(index));
+    public void removeEvent(String nameEvent) {
+        EventList event = eventRepository.getEventByName(nameEvent);
+        if (event != null) {
+            eventRepository.removeEvent(event);
         }
+    }
+
+    @Override
+    public void updateEvent(String nameEvent, String dateEvent, String eventLocation) {
+        EventList event = eventRepository.getEventByName(nameEvent);
+        if (event != null) {
+            event.setNameEvent(nameEvent);
+            event.setDateEvent(dateEvent);
+            event.setEventLocation(eventLocation);
+        }
+    }
+
+    @Override
+    public EventList findEventByName(String nameEvent) {
+        return eventRepository.getEventByName(nameEvent);
     }
 
     @Override
