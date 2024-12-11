@@ -1,12 +1,18 @@
 package repositories;
 
 import config.Database;
+import entities.EventList;
 import entities.PesertaList;
 
 import java.util.ArrayList;
 
 
 public class PesertaRepositoryDbImpl implements PesertaRepository {
+    @Override
+    public ArrayList<PesertaList> getPesertaByEvent(EventList event) {
+        return null;
+    }
+
     @Override
     public void addPeserta(PesertaList peserta) {
         Database.pesertaList.add(peserta);

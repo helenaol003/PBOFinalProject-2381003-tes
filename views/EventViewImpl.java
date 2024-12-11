@@ -1,5 +1,6 @@
 package views;
 
+import entities.EventList;
 import services.EventService;
 
 import java.util.Scanner;
@@ -15,51 +16,88 @@ public class EventViewImpl implements EventView {
     @Override
     public void displayMenu() {
         while (true) {
-            System.out.println("====== Menu Event ======");
-            System.out.println("1. Tambah Event");
-            System.out.println("2. Hapus Event");
-            System.out.println("3. Lihat Semua Event");
-            System.out.println("0. Keluar");
-            System.out.println("========================");
-            System.out.print("Masukkan Pilihan Menu: ");
+            clearScreen();
+            System.out.println("\n=== Event Management ===");
+            System.out.println("1. Add Event");
+            System.out.println("2. Remove Event");
+            System.out.println("3. Update Event");
+            System.out.println("4. List All Events");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); // Consume newline
 
             switch (choice) {
-                case 1 -> addEvent();
-                case 2 -> removeEvent();
-                case 3 -> showAllEvents();
-                case 0 -> {
-                    System.out.println("Terima kasih!");
+                case 1 : addEvent();
+                        break;
+                case 2 : removeEvent();
+                        break;
+                case 3 : updateEvent();
+                        break;
+                case 4 : listAllEvents();
+                        break;
+                case 5 : {
+                    System.out.println("Exiting Event Management...");
                     return;
                 }
-                default -> System.out.println("Pilihan tidak valid!");
+                default : System.out.println("Invalid choice. Please try again.");
+                        break;
             }
         }
     }
 
-    private void addEvent() {
-        System.out.print("Nama Event: ");
-        String name = scanner.nextLine();
-        System.out.print("Tanggal Event: ");
-        String date = scanner.nextLine();
-        System.out.print("Lokasi Event: ");
-        String location = scanner.nextLine();
-        eventService.addEvent(name, date, location);
+    @Override
+    public void addEvent() {
+        System.out.println("\n=== Add Event ===");
+        System.out.print("Enter Event Name: ");
+        String nameEvent = scanner.nextLine();
+        System.out.print("Enter Event Date: ");
+        String dateEvent = scanner.nextLine();
+        System.out.print("Enter Event Location: ");
+        String eventLocation = scanner.nextLine();
+
+        eventService.addEvent(nameEvent, dateEvent, eventLocation);
+        System.out.println("Event added successfully!");
     }
 
-    private void removeEvent() {
-        System.out.print("Masukkan Index Event untuk dihapus: ");
-        int index = scanner.nextInt();
-        scanner.nextLine();
-        eventService.removeEvent(index - 1);
+    @Override
+    public void removeEvent() {
+        System.out.println("\n=== Remove Event ===");
+        System.out.print("Enter Event Name to Remove: ");
+        String nameEvent = scanner.nextLine();
+
+        eventService.removeEvent(nameEvent);
+        System.out.println("Event removed successfully!");
     }
 
-    private void showAllEvents() {
-        eventService.getAllEvents().forEach(event -> {
-            System.out.println("Nama Event: " + event.getNameEvent());
-            System.out.println("Tanggal: " + event.getDateEvent());
-            System.out.println("Lokasi: " + event.getEventLocation());
-        });
+    @Override
+    public void updateEvent() {
+        System.out.println("\n=== Update Event ===");
+        System.out.print("Enter Event Name to Update: ");
+        String nameEvent = scanner.nextLine();
+        System.out.print("Enter New Date: ");
+        String dateEvent = scanner.nextLine();
+        System.out.print("Enter New Location: ");
+        String eventLocation = scanner.nextLine();
+
+        eventService.updateEvent(nameEvent, dateEvent, eventLocation);
+        System.out.println("Event updated successfully!");
+    }
+
+    @Override
+    public void listAllEvents() {
+        System.out.println("\n=== List All Events ===");
+        for (EventList event : eventService.getAllEvents()) {
+            System.out.println("Name: " + event.getNameEvent());
+            System.out.println("Date: " + event.getDateEvent());
+            System.out.println("Location: " + event.getEventLocation());
+            System.out.println("----------------------------");
+        }
+    }
+
+    public static void clearScreen() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
     }
 }
