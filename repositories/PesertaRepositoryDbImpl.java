@@ -3,14 +3,14 @@ package repositories;
 import config.Database;
 import entities.EventList;
 import entities.PesertaList;
-import entities.EventList;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class PesertaRepositoryDbImpl {
+public class PesertaRepositoryDbImpl implements PesertaRepository{
     private final Database database;
 
     public PesertaRepositoryDbImpl(Database database) {
@@ -69,16 +69,16 @@ public class PesertaRepositoryDbImpl {
         return null;
     }
 
-    @Override
-    public ArrayList<PesertaList> getPesertaByEvent(EventList event) {
-        ArrayList<PesertaList> pesertaByEvent = new ArrayList<>();
-        for (PesertaList peserta : Database.pesertaList) {
-            if (peserta.getEventpilih().equals(event)) { // Gunakan equals dari EventList
-                pesertaByEvent.add(peserta);
-            }
-        }
-        return pesertaByEvent;
-    }
+//    @Override
+//    public ArrayList<PesertaList> getPesertaByEvent(EventList event) {
+//        ArrayList<PesertaList> pesertaByEvent = new ArrayList<>();
+//        for (PesertaList peserta : Database.pesertaList) {
+//            if (peserta.getEventpilih().equals(event)) { // Gunakan equals dari EventList
+//                pesertaByEvent.add(peserta);
+//            }
+//        }
+//        return pesertaByEvent;
+//    }
 
     @Override
     public ArrayList<PesertaList> getAllPeserta() {

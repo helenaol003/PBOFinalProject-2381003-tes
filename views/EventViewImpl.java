@@ -19,6 +19,7 @@ public class EventViewImpl implements EventView {
             System.out.println("1. Tambah Event");
             System.out.println("2. Hapus Event");
             System.out.println("3. Lihat Semua Event");
+            System.out.println("4. Update Event");
             System.out.println("0. Keluar");
             System.out.println("========================");
             System.out.print("Masukkan Pilihan Menu: ");
@@ -28,7 +29,8 @@ public class EventViewImpl implements EventView {
             switch (choice) {
                 case 1 -> addEvent();
                 case 2 -> removeEvent();
-                case 3 -> showAllEvents();
+                case 3 -> listAllEvents();
+                case 4 -> updateEvent();
                 case 0 -> {
                     System.out.println("Terima kasih!");
                     return;
@@ -38,6 +40,7 @@ public class EventViewImpl implements EventView {
         }
     }
 
+    @Override
     private void addEvent() {
         System.out.print("Nama Event: ");
         String name = scanner.nextLine();
@@ -48,14 +51,29 @@ public class EventViewImpl implements EventView {
         eventService.addEvent(name, date, location);
     }
 
+    @Override
     private void removeEvent() {
         System.out.print("Masukkan Index Event untuk dihapus: ");
-        int index = scanner.nextInt();
-        scanner.nextLine();
-        eventService.removeEvent(index - 1);
+        String name = scanner.nextLine();
+        eventService.removeEvent(name);
+//        int index = scanner.nextInt();
+//        scanner.nextLine();
+//        eventService.removeEvent(index - 1);
     }
 
-    private void showAllEvents() {
+    @Override
+    public void updateEvent(){
+        System.out.print("Nama Event yang akan diupdate: ");
+        String name = scanner.nextLine();
+        System.out.print("Tanggal Event Baru: ");
+        String date = scanner.nextLine();
+        System.out.print("Lokasi Event Baru: ");
+        String location = scanner.nextLine();
+        eventService.updateEvent(name, date, location);
+    }
+
+    @Override
+    private void listAllEvents() {
         eventService.getAllEvents().forEach(event -> {
             System.out.println("Nama Event: " + event.getNameEvent());
             System.out.println("Tanggal: " + event.getDateEvent());

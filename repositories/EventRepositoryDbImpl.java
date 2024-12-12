@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class EventRepositoryDbImpl {
+public class EventRepositoryDbImpl implements EventRepository{
     private final Database database;
 
     public EventRepositoryDbImpl(Database database) {
