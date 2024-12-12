@@ -3,6 +3,7 @@ package repositories;
 import config.Database;
 import entities.EventList;
 import entities.PesertaList;
+import entities.EventList;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -84,6 +85,17 @@ public class PesertaRepositoryDbImpl implements PesertaRepository {
             System.err.println("Error fetching peserta by NIM: " + e.getMessage());
         }
         return null;
+    }
+
+    @Override
+    public ArrayList<PesertaList> getPesertaByEvent(EventList event) {
+        ArrayList<PesertaList> pesertaByEvent = new ArrayList<>();
+        for (PesertaList peserta : Database.pesertaList) {
+            if (peserta.getEventpilih().equals(event)) { // Gunakan equals dari EventList
+                pesertaByEvent.add(peserta);
+            }
+        }
+        return pesertaByEvent;
     }
 
     @Override

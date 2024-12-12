@@ -50,4 +50,17 @@ public class EventList {
         pesertaList.remove(peserta);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EventList eventList = (EventList) o;
+        return nameEvent.equals(eventList.nameEvent); // Perbandingan berdasarkan nama event
+    }
+
+    @Override
+    public int hashCode() {
+        return nameEvent.hashCode(); // Hash berdasarkan nama event
+    }
 }
+
