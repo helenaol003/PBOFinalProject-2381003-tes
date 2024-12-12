@@ -1,5 +1,5 @@
-import repositories.EventRepositoryDbImpl;
-import repositories.PesertaRepositoryDbImpl;
+import repositories.EventRepositoryImpl;
+import repositories.PesertaRepositoryImpl;
 import services.EventService;
 import services.EventServiceImpl;
 import services.PesertaService;
@@ -14,8 +14,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // Instantiate repositories
-        EventRepositoryDbImpl eventRepository = new EventRepositoryDbImpl();
-        PesertaRepositoryDbImpl pesertaRepository = new PesertaRepositoryDbImpl();
+        EventRepositoryImpl eventRepository = new EventRepositoryImpl();
+        PesertaRepositoryImpl pesertaRepository = new PesertaRepositoryImpl();
 
         // Instantiate services
         EventService eventService = new EventServiceImpl(eventRepository);

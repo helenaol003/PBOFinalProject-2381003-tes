@@ -4,7 +4,7 @@ import config.Database;
 
 import java.util.ArrayList;
 
-public class EventRepositoryDbImpl implements EventRepository {
+public class EventRepositoryImpl implements EventRepository {
     @Override
     public void addEvent(EventList event) {
         Database.eventList.add(event);

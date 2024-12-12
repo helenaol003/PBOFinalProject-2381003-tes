@@ -7,7 +7,7 @@ import entities.PesertaList;
 import java.util.ArrayList;
 
 
-public class PesertaRepositoryDbImpl implements PesertaRepository {
+public class PesertaRepositoryImpl implements PesertaRepository {
     @Override
     public ArrayList<PesertaList> getPesertaByEvent(EventList event) {
         return null;
