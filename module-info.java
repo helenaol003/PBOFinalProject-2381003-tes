@@ -5,7 +5,6 @@ module EventPesertaManagement {
     requires org.slf4j;
     requires javafx.fxml;
     requires javafx.controls;
-    requires jdk.jfr;
 
     opens entities;
     opens repositories;
