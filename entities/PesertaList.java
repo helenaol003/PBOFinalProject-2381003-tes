@@ -1,7 +1,5 @@
 package entities;
 
-import jdk.jfr.Event;
-
 public class PesertaList {
     private String nama;
     private String nim;
