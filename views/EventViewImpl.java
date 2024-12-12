@@ -49,10 +49,9 @@ public class EventViewImpl implements EventView {
     }
 
     private void removeEvent() {
-        System.out.print("Masukkan Index Event untuk dihapus: ");
-        int index = scanner.nextInt();
-        scanner.nextLine();
-        eventService.removeEvent(index - 1);
+        System.out.print("Masukkan Nama Event untuk dihapus: ");
+        String nameEvent = scanner.nextLine();  // Ambil input nama event dari pengguna
+        eventService.removeEvent(nameEvent);    // Menghapus event berdasarkan nama
     }
 
     private void showAllEvents() {

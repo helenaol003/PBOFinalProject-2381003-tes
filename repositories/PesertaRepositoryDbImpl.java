@@ -2,6 +2,7 @@ package repositories;
 
 import config.Database;
 import entities.PesertaList;
+import entities.EventList;
 
 import java.util.ArrayList;
 
@@ -25,6 +26,17 @@ public class PesertaRepositoryDbImpl implements PesertaRepository {
             }
         }
         return null;
+    }
+
+    @Override
+    public ArrayList<PesertaList> getPesertaByEvent(EventList event) {
+        ArrayList<PesertaList> pesertaByEvent = new ArrayList<>();
+        for (PesertaList peserta : Database.pesertaList) {
+            if (peserta.getEventpilih().equals(event)) { // Gunakan equals dari EventList
+                pesertaByEvent.add(peserta);
+            }
+        }
+        return pesertaByEvent;
     }
 
     @Override
