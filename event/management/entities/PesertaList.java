@@ -1,4 +1,4 @@
-package entities;
+package event.management.entities;
 
 public class PesertaList {
     private String nama;

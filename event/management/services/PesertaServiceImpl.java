@@ -1,8 +1,8 @@
-package services;
+package event.management.services;
 
-import entities.EventList;
-import entities.PesertaList;
-import repositories.PesertaRepository;
+import event.management.entities.EventList;
+import event.management.entities.PesertaList;
+import event.management.repositories.PesertaRepository;
 
 import java.util.ArrayList;
 

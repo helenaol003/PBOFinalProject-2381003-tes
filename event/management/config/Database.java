@@ -1,7 +1,7 @@
-package config;
+package event.management.config;
 
-import entities.EventList;
-import entities.PesertaList;
+import event.management.entities.EventList;
+import event.management.entities.PesertaList;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,9 +1,9 @@
-package views;
+package event.management.views;
 
-import entities.EventList;
-import entities.PesertaList;
-import services.EventService;
-import services.PesertaService;
+import event.management.entities.EventList;
+import event.management.entities.PesertaList;
+import event.management.services.EventService;
+import event.management.services.PesertaService;
 
 import java.util.Scanner;
 

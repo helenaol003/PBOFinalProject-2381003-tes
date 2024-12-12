@@ -1,27 +1,29 @@
-import repositories.EventRepositoryImpl;
-import repositories.PesertaRepositoryImpl;
-import services.EventService;
-import services.EventServiceImpl;
-import services.PesertaService;
-import services.PesertaServiceImpl;
-import views.EventView;
-import views.EventViewImpl;
-import views.PesertaView;
-import views.PesertaViewImpl;
+package event.management;
+
+import event.management.repositories.EventRepositoryImpl;
+import event.management.repositories.PesertaRepositoryImpl;
+import event.management.services.EventService;
+import event.management.services.EventServiceImpl;
+import event.management.services.PesertaService;
+import event.management.services.PesertaServiceImpl;
+import event.management.views.EventView;
+import event.management.views.EventViewImpl;
+import event.management.views.PesertaView;
+import event.management.views.PesertaViewImpl;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Instantiate repositories
+        // Instantiate event.management.repositories
         EventRepositoryImpl eventRepository = new EventRepositoryImpl();
         PesertaRepositoryImpl pesertaRepository = new PesertaRepositoryImpl();
 
-        // Instantiate services
+        // Instantiate event.management.services
         EventService eventService = new EventServiceImpl(eventRepository);
         PesertaService pesertaService = new PesertaServiceImpl(pesertaRepository);
 
-        // Instantiate views
+        // Instantiate event.management.views
         EventView eventView = new EventViewImpl(eventService);
         PesertaView pesertaView = new PesertaViewImpl(pesertaService, eventService);
 

@@ -1,6 +1,6 @@
-package views;
+package event.management.views;
 
-import services.EventService;
+import event.management.services.EventService;
 
 import java.util.Scanner;
 

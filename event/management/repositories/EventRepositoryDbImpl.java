@@ -1,7 +1,7 @@
-package repositories;
+package event.management.repositories;
 
-import config.Database;
-import entities.EventList;
+import event.management.config.Database;
+import event.management.entities.EventList;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

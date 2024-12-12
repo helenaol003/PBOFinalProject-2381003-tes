@@ -1,4 +1,4 @@
-package views;
+package event.management.views;
 
 public interface EventView {
     void displayMenu();

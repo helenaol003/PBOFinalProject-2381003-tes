@@ -1,8 +1,8 @@
-package repositories;
+package event.management.repositories;
 
-import config.Database;
-import entities.EventList;
-import entities.PesertaList;
+import event.management.config.Database;
+import event.management.entities.EventList;
+import event.management.entities.PesertaList;
 
 import java.util.ArrayList;
 

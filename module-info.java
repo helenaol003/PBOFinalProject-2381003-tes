@@ -6,9 +6,9 @@ module EventPesertaManagement {
     requires javafx.fxml;
     requires javafx.controls;
 
-    opens entities;
-    opens repositories;
-    opens services;
-    opens views;
-    opens config;
+    opens event.management.entities;
+    opens event.management.repositories;
+    opens event.management.services;
+    opens event.management.views;
+    opens event.management.config;
 }

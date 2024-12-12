@@ -1,4 +1,4 @@
-package entities;
+package event.management.entities;
 import java.util.ArrayList;
 
 public class EventList {
