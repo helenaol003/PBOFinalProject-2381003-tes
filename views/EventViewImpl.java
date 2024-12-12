@@ -41,7 +41,7 @@ public class EventViewImpl implements EventView {
     }
 
     @Override
-    private void addEvent() {
+    public void addEvent() {
         System.out.print("Nama Event: ");
         String name = scanner.nextLine();
         System.out.print("Tanggal Event: ");
@@ -52,7 +52,7 @@ public class EventViewImpl implements EventView {
     }
 
     @Override
-    private void removeEvent() {
+    public void removeEvent() {
         System.out.print("Masukkan Index Event untuk dihapus: ");
         String name = scanner.nextLine();
         eventService.removeEvent(name);
@@ -73,7 +73,7 @@ public class EventViewImpl implements EventView {
     }
 
     @Override
-    private void listAllEvents() {
+    public void listAllEvents() {
         eventService.getAllEvents().forEach(event -> {
             System.out.println("Nama Event: " + event.getNameEvent());
             System.out.println("Tanggal: " + event.getDateEvent());
