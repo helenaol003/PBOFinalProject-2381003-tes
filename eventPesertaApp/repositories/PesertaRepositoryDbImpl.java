@@ -1,8 +1,10 @@
-package repositories;
+package eventPesertaApp.repositories;
 
-import config.Database;
-import entities.EventList;
-import entities.PesertaList;
+import eventPesertaApp.config.Database;
+import eventPesertaApp.entities.EventList;
+import eventPesertaApp.entities.PesertaList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 
 import java.sql.Connection;
@@ -10,9 +12,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+@Component
 public class PesertaRepositoryDbImpl implements PesertaRepository{
     private final Database database;
 
+    @Autowired
     public PesertaRepositoryDbImpl(Database database) {
         this.database = database;
     }

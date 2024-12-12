@@ -1,13 +1,17 @@
-package services;
+package eventPesertaApp.services;
 
-import entities.EventList;
-import repositories.EventRepository;
+import eventPesertaApp.entities.EventList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import eventPesertaApp.repositories.EventRepository;
 
 import java.util.ArrayList;
 
+@Component
 public class EventServiceImpl implements EventService {
     private final EventRepository eventRepository;
 
+    @Autowired
     public EventServiceImpl(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
     }

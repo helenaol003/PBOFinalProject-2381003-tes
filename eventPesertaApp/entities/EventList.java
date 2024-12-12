@@ -1,4 +1,4 @@
-package entities;
+package eventPesertaApp.entities;
 import java.util.ArrayList;
 
 public class EventList {

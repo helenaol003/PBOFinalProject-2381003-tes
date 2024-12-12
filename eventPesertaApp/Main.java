@@ -1,16 +1,20 @@
-import repositories.EventRepositoryImpl;
-import repositories.PesertaRepositoryImpl;
-import services.EventService;
-import services.EventServiceImpl;
-import services.PesertaService;
-import services.PesertaServiceImpl;
-import views.EventView;
-import views.EventViewImpl;
-import views.PesertaView;
-import views.PesertaViewImpl;
+package eventPesertaApp;
+
+import eventPesertaApp.repositories.EventRepositoryImpl;
+import eventPesertaApp.repositories.PesertaRepositoryImpl;
+import eventPesertaApp.services.EventService;
+import eventPesertaApp.services.EventServiceImpl;
+import eventPesertaApp.services.PesertaService;
+import eventPesertaApp.services.PesertaServiceImpl;
+import eventPesertaApp.views.EventView;
+import eventPesertaApp.views.EventViewImpl;
+import eventPesertaApp.views.PesertaView;
+import eventPesertaApp.views.PesertaViewImpl;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.util.Scanner;
 
+@ComponentScan(basePackages = "eventPesertaApp")
 public class Main {
     public static void main(String[] args) {
         // Instantiate repositories

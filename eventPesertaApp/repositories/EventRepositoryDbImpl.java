@@ -1,16 +1,20 @@
-package repositories;
+package eventPesertaApp.repositories;
 
-import config.Database;
-import entities.EventList;
+import eventPesertaApp.config.Database;
+import eventPesertaApp.entities.EventList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class EventRepositoryDbImpl implements EventRepository{
+@Component
+public class EventRepositoryDbImpl implements EventRepository {
     private final Database database;
 
+    @Autowired
     public EventRepositoryDbImpl(Database database) {
         this.database = database;
     }

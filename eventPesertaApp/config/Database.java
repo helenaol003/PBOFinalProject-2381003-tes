@@ -1,7 +1,7 @@
-package config;
+package eventPesertaApp.config;
 
-import entities.EventList;
-import entities.PesertaList;
+import eventPesertaApp.entities.EventList;
+import eventPesertaApp.entities.PesertaList;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

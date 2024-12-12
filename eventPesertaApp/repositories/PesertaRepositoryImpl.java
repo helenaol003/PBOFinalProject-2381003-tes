@@ -1,8 +1,8 @@
-package repositories;
+package eventPesertaApp.repositories;
 
-import config.Database;
-import entities.EventList;
-import entities.PesertaList;
+import eventPesertaApp.config.Database;
+import eventPesertaApp.entities.EventList;
+import eventPesertaApp.entities.PesertaList;
 
 import java.util.ArrayList;
 
